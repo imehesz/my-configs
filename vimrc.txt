@@ -13,6 +13,7 @@ set tabstop=2
 set autoindent
 set expandtab
 set backupcopy=yes
+set wildignore=node_modules/**,node/**,target/**
 noremap <F4> :CommandTFlush<CR>
 map <F5> :!grep -rI --exclude-dir="target" --exclude="*svn*" --exclude="*\.min\.*" "console.log" .
 map <C-x> :s/^/\ \ /
