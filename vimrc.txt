@@ -7,6 +7,7 @@ map <c-c> :A<CR>
 " Move tabs with alt + left|right
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 set number
 set tabstop=2
@@ -14,6 +15,8 @@ set autoindent
 set expandtab
 set backupcopy=yes
 set wildignore=node_modules/**,node/**,target/**
+set wildignore+=*/tmp/*,*/node_modules/*,*/node/*,*/target/*,*.so,*.swp,*.zip
+
 noremap <F4> :CommandTFlush<CR>
 map <F5> :!grep -rI --exclude-dir="target" --exclude="*svn*" --exclude="*\.min\.*" "console.log" .
 map <C-x> :s/^/\ \ /
